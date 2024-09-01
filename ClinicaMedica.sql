@@ -1,3 +1,14 @@
+CREATE TABLE Cidade (
+    ID_Cidade INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(50),
+    Estado VARCHAR(2)
+);
+
+CREATE TABLE Especialidade (
+    ID_Especialidade INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(50)
+);
+
 CREATE TABLE Medico (
     CRM VARCHAR(10) PRIMARY KEY,
     Nome VARCHAR(100),
@@ -26,17 +37,6 @@ CREATE TABLE Paciente (
     CEP VARCHAR(10),
     ID_Cidade INT,
     FOREIGN KEY (ID_Cidade) REFERENCES Cidade(ID_Cidade)
-);
-
-CREATE TABLE Cidade (
-    ID_Cidade INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(50),
-    Estado VARCHAR(2)
-);
-
-CREATE TABLE Especialidade (
-    ID_Especialidade INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(50)
 );
 
 CREATE TABLE Convenio (
@@ -72,4 +72,3 @@ CREATE TABLE Medico_Convenio (
     FOREIGN KEY (CRM_Medico) REFERENCES Medico(CRM),
     FOREIGN KEY (ID_Convenio) REFERENCES Convenio(ID_Convenio)
 );
-
